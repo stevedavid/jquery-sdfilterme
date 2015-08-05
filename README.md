@@ -14,6 +14,10 @@ See this [JSFiddle link](http://jsfiddle.net/D4V1D/8obf6vye/) to see the plugin.
 * supports unlimited number of elements
 * animation and CSS customizable
 
+## TO-DOs
+* handle click event
+* sorting option
+
 ## Usage
 * **HTML**
 
