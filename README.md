@@ -11,7 +11,8 @@ This plugin allows you to display an `<ul>` list with the shape of a set of boxe
 See this [JSFiddle link](http://jsfiddle.net/D4V1D/8obf6vye/) to see the plugin.
 
 ## Features
-* 
+* supports unlimited number of elements
+* animation and CSS customizable
 
 ## Usage
 * **HTML**
@@ -68,7 +69,7 @@ jQuery(function($) {
               duration: 250, // integer: in ms
               border: '1px solid white', // string: as in CSS
               color: 'white', // string: color
-              opacity: 0.5 // integer: as in CSS
+              opacity: 0.5 // float: as in CSS
           },
           border: { // object
               width: 10, // integer: in px
@@ -85,7 +86,12 @@ jQuery(function($) {
 ## Options
 Name | Type | Default | Description
 ------------ | ------------- | ------------- | -------------
-filterSelector | string | *'.sorter'* | The jQuery element that is targetting the `<ul>`
+filterSelector | string | `'.sorter'` | The jQuery element that is targetting the `<ul>`
+duration | integer | `1000` | The duration in `ms` of the moving animation
+animation | string | `'ease'` | The CSS animation to apply
+hoverEffect | boolean | `true` | If title provided, apply a `scale(0, 0)` to overlay element
+sortedOut | string | `'disappear'` | Set to `'opacity'` to reduce the opacity of the non-matching elements to `0.25` instead of disappearing
+css | object | `// ...` | The CSS properties to apply to each element
 
 ## Licence
 Copyright (c) 2015 Steve David
