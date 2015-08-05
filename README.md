@@ -62,7 +62,7 @@ jQuery(function($) {
       duration: 1000, // integer: in ms
       animation: 'ease', // string: ease | ease-in | ease-out | linear | ease-in-out
       hoverEffect: true, // boolean
-      sortedOut: 'disappear', // string: dissappear | opacity
+      sortedOut: 'disappear', // string: disappear | opacity
       css: { // object
           overlay: { // object
               background: { // object
