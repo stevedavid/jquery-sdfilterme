@@ -37,11 +37,6 @@
 
             var $boxes = $el.find('> .sdfm-inner-wrapper');
 
-            // Triggering events
-            $boxes.on('click', function() {
-                $(this).trigger('fm.boxClicked');
-            });
-
             $(options.filterSelector).css('cursor', 'pointer').on('click', function(e) {
                 e.preventDefault();
                 $.sdFilterMe.filterBoxes($el, $(this).attr('data-filter'), options);
@@ -126,9 +121,7 @@
             if(typeof(title) !== 'undefined') {
                 $.sdFilterMe.addOverlayTitles($wrapperClone, title, options, maxWidth, maxHeight);
             }
-            // if(typeof(link) !== 'undefined') {
-            //     $.sdFilterMe.addLink($wrapperClone, link, options);
-            // }
+            
             if(typeof(order) !== 'undefined') {
                 $wrapperClone.attr('data-order', order);
             }
