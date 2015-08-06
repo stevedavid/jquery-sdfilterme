@@ -7,8 +7,8 @@ This plugin allows you to display an `<ul>` list with the shape of a set of boxe
 
 ## Changelog
 ### v0.2
-* - links on boxes with `data-link` attribute
-* - message when nothing to show in category
+* links on boxes with `data-link` attribute
+* message when nothing to show in category
 
 ## Requirements
 `jQuery.sdFilterMe` requires the latest version of [`jQuery`](https://jquery.com/download/).
