@@ -110,7 +110,7 @@ filterSelector | string | `'.sorter'` | The jQuery element that is targetting th
 orderSelector | string | `'.order'` | The jQuery element that is targetting the sorting elements
 duration | integer | `1000` | The duration in `ms` of the moving animation
 animation | string | `'ease'` | The CSS animation to apply
-hoverEffect | boolean | `true` | If title provided, apply a `scale(0, 0)` to overlay element
+hoverEffect | boolean | `true` | If title provided, applies a `scale(0, 0)` to overlay element when hovering
 sortedOut | string | `'disappear'` | Set to `'opacity'` to reduce the opacity of the non-matching elements to `0.25` instead of disappearing
 css | object | `// ...` | The CSS properties to apply to each element
 
