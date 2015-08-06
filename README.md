@@ -70,7 +70,7 @@ jQuery(function($) {
 
   $('#sort-me').sdFilterMe({
       filterSelector: '.sorter', // string: selector
-      orderSelector: '.order', // string: selector
+      orderSelector: '.orderer', // string: selector
       duration: 1000, // integer: in ms
       animation: 'ease', // string: ease | ease-in | ease-out | linear | ease-in-out
       hoverEffect: true, // boolean
@@ -107,7 +107,7 @@ jQuery(function($) {
 Name | Type | Default | Description
 ------------ | ------------- | ------------- | -------------
 filterSelector | string | `'.sorter'` | The jQuery element that is targetting the filter elements
-orderSelector | string | `'.order'` | The jQuery element that is targetting the sorting elements
+orderSelector | string | `'.orderer'` | The jQuery element that is targetting the sorting elements
 duration | integer | `1000` | The duration in `ms` of the moving animation
 animation | string | `'ease'` | The CSS animation to apply
 hoverEffect | boolean | `true` | If title provided, applies a `scale(0, 0)` to overlay element when hovering
