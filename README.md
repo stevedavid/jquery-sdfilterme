@@ -32,17 +32,17 @@ First of all, you would need to make a `<ul>` list populated with `<li>` items c
 
 ```html
 <ul id="sort-me">
-    <li class="food" data-title="Food">
-        <img src="http://lorempixel.com/200/200/food/1"/>
+    <li class="food" data-title="2" data-order="2" data-link="http://www.steve-david.com/">
+        <img src="http://lorempixel.com/300/200/food/1"/>
     </li>
-    <li class="sports" data-title="Sports">
-        <img src="http://lorempixel.com/200/200/sports/1"/>
+    <li class="sports" data-title="5" data-order="5">
+        <img src="http://lorempixel.com/300/200/sports/1"/>
     </li>
-    <li class="sports" data-title="Sports">
-        <img src="http://lorempixel.com/200/200/sports/3"/>
+    <li class="sports" data-title="6" data-order="6">
+        <img src="http://lorempixel.com/300/200/sports/3"/>
     </li>
-    <li class="business" data-title="Business">
-        <img src="http://lorempixel.com/200/200/business/4"/>
+    <li class="business" data-title="1" data-order="1">
+        <img src="http://lorempixel.com/300/200/business/4"/>
     </li>
     <!-- and so on -->
 </ul>
@@ -58,6 +58,14 @@ You then need to add the filter trigerring elements. You define them in the opti
 <button class="sorter" data-filter="*">All</button>
 ```
 
+You can also add the ordering option. It works the same way and they **must** have the `data-order` set to either `asc` or `desc`.
+
+```html
+<button class="orderer" data-order="asc">ASC</button>
+<button class="orderer" data-order="desc">DESC</button>
+```
+
+
 * **jQuery**
 
 The syntax of `jQuery.sdFilterMe`'s initialization is the following:
@@ -66,6 +74,7 @@ jQuery(function($) {
 
   $('#sort-me').sdFilterMe({
       filterSelector: '.sorter', // string: selector
+      orderSelector: '.order', // string: selector
       duration: 1000, // integer: in ms
       animation: 'ease', // string: ease | ease-in | ease-out | linear | ease-in-out
       hoverEffect: true, // boolean
@@ -88,7 +97,11 @@ jQuery(function($) {
           },
           margin: 10, // integer: in px
           pointer: true // boolean
-      }
+      },
+      nothingToShow: {
+          text: 'Nothing to show', // string: text
+          color: '#ccc' // string: color
+    }
   });
 
 });
@@ -97,7 +110,8 @@ jQuery(function($) {
 ## Options
 Name | Type | Default | Description
 ------------ | ------------- | ------------- | -------------
-filterSelector | string | `'.sorter'` | The jQuery element that is targetting the `<ul>`
+filterSelector | string | `'.sorter'` | The jQuery element that is targetting the filter elements
+orderSelector | string | `'.order'` | The jQuery element that is targetting the sorting elements
 duration | integer | `1000` | The duration in `ms` of the moving animation
 animation | string | `'ease'` | The CSS animation to apply
 hoverEffect | boolean | `true` | If title provided, apply a `scale(0, 0)` to overlay element
