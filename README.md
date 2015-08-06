@@ -10,6 +10,7 @@ This plugin allows you to display an `<ul>` list with the shape of a set of boxe
 * links on boxes with `data-link` attribute
 * message when nothing to show in category
 * sorting option available with `data-order` attribute
+* callback handler for the click event
 
 ## Requirements
 `jQuery.sdFilterMe` requires the latest version of [`jQuery`](https://jquery.com/download/).
@@ -98,7 +99,10 @@ jQuery(function($) {
           text: 'Nothing to show', // string: text
           color: '#ccc' // string: color
     }
-  });
+  }).on('fm.boxClicked', function(e, position, order) {
+        console.log('Box position is ' + position);
+        console.log('Box sort order is ' + order);
+    });
 
 });
 ```
@@ -113,6 +117,12 @@ animation | string | `'ease'` | The CSS animation to apply
 hoverEffect | boolean | `true` | If title provided, applies a `scale(0, 0)` to overlay element when hovering
 sortedOut | string | `'disappear'` | Set to `'opacity'` to reduce the opacity of the non-matching elements to `0.25` instead of disappearing
 css | object | `// ...` | The CSS properties to apply to each element
+
+
+## Events
+Name | Parameters | Description
+------------ | ------------- | -------------
+fm.boxClicked | `e, position, order` | This event is triggered when the user clicks on a box (whether `data-link` is provided or not). Three parameters are given: `e` is the event; `position` is the initial position of the clicked box and `order` is the value of `data-order`. 
 
 ## Licence
 Copyright (c) 2015 Steve David
