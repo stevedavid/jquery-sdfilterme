@@ -38,9 +38,7 @@
             var $boxes = $el.find('> .sdfm-inner-wrapper');
 
             // Triggering events
-            $boxes.on('click', function() {
-                $(this).trigger('fm.boxClicked');
-            });
+
 
             $(options.filterSelector).css('cursor', 'pointer').on('click', function(e) {
                 e.preventDefault();
@@ -145,16 +143,21 @@
             $('#' + outerWrapperId).append($wrapperClone);
         }
 
+        $outerWrapper = $('#' + outerWrapperId);
+
+        $outerWrapper.before($el.clone(true)).find('> .sdfm-inner-wrapper').on('click', function() {
+            $('#' + outerWrapperId).prev('ul').trigger('fm.boxClicked', [$(this).index(), $(this).attr('data-order')]);
+        });
         $el.remove();
 
-        return $('#' + outerWrapperId);
+        return $outerWrapper;
 
     };
 
     $.sdFilterMe.storeCoordinates = function($el) {
 
         var layout = {};
-        $el.find('> div').each(function(i) {
+        $el.find('> .sdfm-inner-wrapper').each(function(i) {
 
             layout[i] = {
                 origPosX: this.offsetLeft,
@@ -208,6 +211,12 @@
     };
 
     $.sdFilterMe.translateBox = function($box, target, options, hide) {
+
+        if(!$.layout[$box.index()]) {
+            console.error('Error: can\'t read value for '+ $box.index() +' in $.layout[].');
+            return;
+        }
+
         var i = $box.index()
             , top = $.layout[i].origPosY
             , left = $.layout[i].origPosX
