@@ -2,7 +2,13 @@
 This plugin allows you to display an `<ul>` list with the shape of a set of boxes that would move according to your filtering needs. 
 
 ## Releases
+* **v0.2** - 06/08/2015
 * **v0.1** - 05/08/2015
+
+## Changelog
+### v0.2
+* - links on boxes with `data-link` attribute
+* - message when nothing to show in category
 
 ## Requirements
 `jQuery.sdFilterMe` requires the latest version of [`jQuery`](https://jquery.com/download/).
