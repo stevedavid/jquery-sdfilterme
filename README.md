@@ -19,8 +19,10 @@ This plugin allows you to display an `<ul>` list with the shape of a set of boxe
 See this [JSFiddle link](http://jsfiddle.net/D4V1D/8obf6vye/) to see the plugin.
 
 ## Features
+* filtering and sorting options available
 * supports unlimited number of elements
 * animation and CSS customizable
+* boxes are `href`-able
 
 ## Usage
 * **HTML**
